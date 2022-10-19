@@ -40,8 +40,14 @@ stateDiagram-v2
     [*] --> lista_de_contratos: token válido
     lista_de_contratos --> detalhes_do_contrato: id
     lista_de_contratos --> formulario: novo contrato
+    state formulario {
+      [*] --> tela_1
+      tela_1 --> ...
+      ... --> tela_n
+      tela_n --> [*]
+    }
     formulario --> formulario: erro
-    formulario --> detalhes_do_contrato: sucesso
+    formulario --> detalhes_do_contrato: submissão OK
     detalhes_do_contrato --> detalhes_do_contrato: consulta status
     detalhes_do_contrato --> lista_de_contratos: voltar
 ```
