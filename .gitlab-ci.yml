@@ -1,0 +1,7 @@
+include:
+  # you must have a repo named ci-templates under the same namespace
+  # of the project of your distro on the private Gitlab in order
+  # to run secret CI/CD jobs
+  - project: '$CI_PROJECT_NAMESPACE/ci-templates'
+    ref: main
+    file: 'wizard-ui.yml'
