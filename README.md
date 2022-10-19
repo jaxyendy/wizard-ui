@@ -16,6 +16,20 @@ yarn
 yarn dev
 ```
 
+# Contribuições
+
+Este repositório pode estar espelhado em outros lugares, para contribuir com melhorias ou relatar
+problemas, utilize a página deste projeto no Github: https://github.com/jaxyendy/wizard-ui
+
+Se você está lendo este README fora do Github, não deixe de ler também o
+arquivo [DISTRO.md](DISTRO.md).
+
+# Licença
+
+A definir.
+<small>(gostamos muito da AGPL3, mas MIT pode ser mais flexível)</small>
+
+
 ## Fluxos
 
 ### Telas da UI
