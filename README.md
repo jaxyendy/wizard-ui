@@ -36,20 +36,26 @@ A definir.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> acesso_negado: token inválido
-    [*] --> lista_de_contratos: token válido
-    lista_de_contratos --> detalhes_do_contrato: id
-    lista_de_contratos --> formulario: novo contrato
-    state formulario {
-      [*] --> tela_1
-      tela_1 --> ...
-      ... --> tela_n
-      tela_n --> [*]
+    state valid_token <<choice>>
+    [*] --> valid_token
+        valid_token --> acess_denied: token inválido
+        valid_token --> welcome: token válido
+    state have_contract <<choice>>
+    welcome --> have_contract: contrato
+        have_contract --> contract_details: contract_id
+        have_contract --> contract_form: não tenho
+    contract_form --> contract_details: envio OK
+    contract_details --> end_contract_form: cancelar contrato
+    end_contract_form --> inactive_contract_detail: envio OK
+    welcome --> inactive_contracts: contratos encerrados
+    inactive_contracts --> inactive_contract_detail: inactive_contract_id
+    inactive_contract_detail --> [*]
+    state contract_form {
+        [*] --> step_1
+        step_1 --> ...
+        ... --> step_n
+        step_n --> [*]
     }
-    formulario --> formulario: erro
-    formulario --> detalhes_do_contrato: submissão OK
-    detalhes_do_contrato --> detalhes_do_contrato: consulta status
-    detalhes_do_contrato --> lista_de_contratos: voltar
 ```
 
 ### Wizard API
