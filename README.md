@@ -60,28 +60,18 @@ stateDiagram-v2
     }
 ```
 
-### Wizard API
+## Biblioteca de Componentes
 
-[Wizard API](https://github.com/jaxyendy/wizard-api) é o Backend (BFF) deste projeto, abaixo alguns
-fluxos que envolvem comunicação entre este projeto e seu backend.
+Este projeto, além de ser um site NextJS, é também uma biblioteca dos componentes usados por este
+site.
 
-#### Contratação
+A lista dos componentes exportados pode ser vista no arquivo `/lib/index.ts`.
 
-```mermaid
-sequenceDiagram
-    Wizard UI->>Wizard API: Dados de formulário
-    alt dados inválidos
-        Wizard API-->>Wizard UI: Erro
-    end
-    Wizard API->>Wizard UI: Resposta
-```
+Este pacote npm é exportado sem transpilação, portanto para utilizar estes componentes em
+um outro projeto NextJS recomendamos o uso do plugin
+[next-transpile-modules](https://github.com/martpie/next-transpile-modules) ou alguma outra
+técnica similar.
 
-#### Consulta
-
-```mermaid
-sequenceDiagram
-    Wizard UI->>Wizard API: Consulta Status
-    Wizard API->>Wizard UI: Status conhecido (cache)
-    Wizard API->>Wizard UI: Último status
-```
-
+Para ajudar com o teste e desenvolvimento de componentes em conjunto com outros projetos NextJS
+localmente, antes da publicação no registry npm, uma ferramenta como o
+[yalc](https://github.com/wclr/yalc) pode também ser útil.
