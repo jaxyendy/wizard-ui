@@ -7,6 +7,7 @@ Uma interface web genérica para a configuração inicial (contratação) de qua
 - [Node.js](https://nodejs.org/) v16.x
 - [Next.js](https://nextjs.org/)
 - [chakra](https://chakra-ui.com/)
+- [next-intl](https://next-intl-docs.vercel.app/)
 
 # Development server
 
