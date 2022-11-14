@@ -1,9 +1,9 @@
 {
   "name": "@jaxyendy/wizard-ui",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "private": false,
   "exports": "lib/index.ts",
-  "files" : [
+  "files": [
     "components",
     "lib"
   ],
