@@ -13,7 +13,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@chakra-ui/react": "^2.3.6",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
