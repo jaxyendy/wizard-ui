@@ -1,6 +1,13 @@
 import { Heading, Button, Link } from '@chakra-ui/react'
+import type { ReactNode, FunctionComponent } from 'react'
 
-export function DefaultHeadline({ title, subtitle }) {
+interface HeadlineProps {
+  title: string,
+  subtitle: string,
+}
+export type HeadlineComponent = FunctionComponent<HeadlineProps>
+
+export function DefaultHeadline({ title, subtitle }: HeadlineProps) {
   return (
     <>
       <Heading as="h1" size="lg">
@@ -13,7 +20,14 @@ export function DefaultHeadline({ title, subtitle }) {
   )
 }
 
-export function DefaultLink({ children, ...other }) {
+interface LinkProps {
+  children: ReactNode,
+  size?: string,
+  href: string
+}
+export type LinkComponent = FunctionComponent<LinkProps>
+
+export function DefaultLink({ children, ...other }: LinkProps) {
   return (
     <Button as={Link} {...other}>
       {children}
