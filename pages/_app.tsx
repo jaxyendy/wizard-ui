@@ -1,14 +1,15 @@
 import '../styles/globals.css'
-import { AppProps } from 'next/app'
-import { AbstractIntlMessages, NextIntlProvider } from 'next-intl'
+import { NextIntlProvider } from 'next-intl'
 import { ChakraProvider } from '@chakra-ui/react'
+import type { AppProps } from 'next/app'
+import type { AbstractIntlMessages } from 'next-intl'
 
 
-type MyAppProps = {
+type MyAppProps = AppProps<{
   messages: AbstractIntlMessages
-}
+}>
 
-function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
+function MyApp({ Component, pageProps }: MyAppProps) {
   return (
     <NextIntlProvider messages={pageProps.messages}>
       <ChakraProvider>

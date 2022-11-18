@@ -1,14 +1,14 @@
 import NextButton from '../../components/NextButton'
-import { ReactNode, FunctionComponent } from 'react'
-import type { HeadlineComponent, LinkProps } from '../Default'
-import type { LinkComponent } from '../NextButton'
+import type { FunctionComponent } from 'react'
+import type { HeadlineComponent, LinkComponent } from '../Default'
 
-type WelcomeContentProps = {
+interface WelcomeContentProps {
   newContractPath: string,
   t: Function,
   Headline: HeadlineComponent,
   Link: LinkComponent,
 }
+export type WelcomeContentComponent = FunctionComponent<WelcomeContentProps>
 
 function WelcomeContent({ newContractPath, t, Headline, Link }: WelcomeContentProps) {
   return (
