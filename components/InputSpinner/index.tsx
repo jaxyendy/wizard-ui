@@ -52,12 +52,12 @@ export default function InputSpinner({
           <MinusIcon />
         </InputLeftElement>
         <Input
-          {...input}
           textAlign="center"
           color={'neutral.400'}
-          height="48px"
+          height={12}
+          {...input}
         />
-        <InputRightElement {...inc} mr={6} fontWeight="700" mt={1}>
+        <InputRightElement mr={6} mt={1} {...inc}>
           <AddIcon color="purple.500" fontSize="smaller" />
         </InputRightElement>
       </InputGroup>
