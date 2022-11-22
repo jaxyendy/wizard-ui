@@ -18,7 +18,7 @@ interface Props {
   onChange: (valueAsString: string, valueAsNumber: number) => void
 }
 
-export default function InputSpinner({
+export function InputSpinner({
   step,
   defaultValue,
   min,

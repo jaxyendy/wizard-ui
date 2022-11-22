@@ -10,7 +10,7 @@ interface WelcomeContentProps {
 }
 export type WelcomeContentComponent = FunctionComponent<WelcomeContentProps>
 
-function WelcomeContent({
+export function WelcomeContent({
   newContractPath,
   t,
   Headline,
@@ -25,5 +25,3 @@ function WelcomeContent({
     </>
   )
 }
-
-export default WelcomeContent
