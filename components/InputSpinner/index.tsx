@@ -48,11 +48,7 @@ export function InputSpinner({ ...props }: Props & NumberInputProps) {
           {...input}
         />
         <InputRightElement mr={3} mt={1} {...inc}>
-          {addIcon ? (
-            addIcon
-          ) : (
-            <AddIcon color="purple.500" fontSize="smaller" />
-          )}
+          {addIcon ? addIcon : <AddIcon />}
         </InputRightElement>
       </InputGroup>
     </HStack>
