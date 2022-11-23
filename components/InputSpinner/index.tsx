@@ -9,10 +9,13 @@ import {
 } from '@chakra-ui/react'
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 
-export function InputSpinner({
-  ...props
-}: NumberInputProps) {
-  const {step, defaultValue, min, width} = props
+interface Props {
+  minusIcon?: React.ReactNode
+  addIcon?: React.ReactNode
+}
+
+export function InputSpinner({ ...props }: Props & NumberInputProps) {
+  const { step, defaultValue, min, max, width, minusIcon, addIcon } = props
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
@@ -27,16 +30,16 @@ export function InputSpinner({
   const input = getInputProps()
 
   return (
-    <HStack maxW={width || 'auto'}>
+    <HStack maxW={width || '224px'}>
       <InputGroup>
         <InputLeftElement
           color={'neutral.400'}
           fontSize="small"
-          ml={6}
+          ml={3}
           mt={1}
           {...dec}
         >
-          <MinusIcon />
+          {minusIcon ? minusIcon : <MinusIcon />}
         </InputLeftElement>
         <Input
           textAlign="center"
@@ -44,8 +47,12 @@ export function InputSpinner({
           height={12}
           {...input}
         />
-        <InputRightElement mr={6} mt={1} {...inc}>
-          <AddIcon color="purple.500" fontSize="smaller" />
+        <InputRightElement mr={3} mt={1} {...inc}>
+          {addIcon ? (
+            addIcon
+          ) : (
+            <AddIcon color="purple.500" fontSize="smaller" />
+          )}
         </InputRightElement>
       </InputGroup>
     </HStack>
