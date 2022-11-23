@@ -14,8 +14,3 @@
 - exemplo de `código` se necessário
 
 ## Screenshots
-
-# Antes de pedir os seus joinhas, confira:
-
-- [ ] Changelog?
-- [ ] Base branch está correta? (Por padrão é a `main`)
