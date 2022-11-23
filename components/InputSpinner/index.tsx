@@ -15,7 +15,7 @@ interface Props {
 }
 
 export function InputSpinner({ ...props }: Props & NumberInputProps) {
-  const { step, defaultValue, min, max, width, minusIcon, addIcon } = props
+  const { step, defaultValue, min, width, minusIcon, addIcon } = props
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
