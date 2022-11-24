@@ -1,0 +1,25 @@
+name: Atualiza versão alpha no NPM
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  bump-publish-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@jaxyendy'
+      - run: |
+          git config --global user.name "NPM Bot"
+          git config --global user.email "nobody@mail.example.com"
+      - run: yarn version --prerelease --preid alpha
+      - run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: git push
