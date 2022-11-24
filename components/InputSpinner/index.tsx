@@ -14,7 +14,7 @@ interface Props {
   addIcon?: React.ReactNode
 }
 
-export function InputSpinner({ ...props }: Props & NumberInputProps) {
+export function InputSpinner(props: Props & NumberInputProps) {
   const { step, defaultValue, min, width, minusIcon, addIcon } = props
 
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
