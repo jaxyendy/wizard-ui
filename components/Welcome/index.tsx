@@ -1,16 +1,21 @@
-import NextButton from '../../components/NextButton'
+import NextButton from '../NextButton'
 import type { FunctionComponent } from 'react'
 import type { HeadlineComponent, LinkComponent } from '../Default'
 
 interface WelcomeContentProps {
-  newContractPath: string,
-  t: Function,
-  Headline: HeadlineComponent,
-  Link: LinkComponent,
+  newContractPath: string
+  t: Function
+  Headline: HeadlineComponent
+  Link: LinkComponent
 }
 export type WelcomeContentComponent = FunctionComponent<WelcomeContentProps>
 
-function WelcomeContent({ newContractPath, t, Headline, Link }: WelcomeContentProps) {
+export function WelcomeContent({
+  newContractPath,
+  t,
+  Headline,
+  Link,
+}: WelcomeContentProps) {
   return (
     <>
       <Headline title={t('title')} subtitle={t('subtitle')} />
@@ -20,5 +25,3 @@ function WelcomeContent({ newContractPath, t, Headline, Link }: WelcomeContentPr
     </>
   )
 }
-
-export default WelcomeContent
