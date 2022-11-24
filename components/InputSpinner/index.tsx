@@ -33,7 +33,7 @@ export function InputSpinner(props: Props & NumberInputProps) {
     <HStack maxW={width || '224px'}>
       <InputGroup>
         <InputLeftElement ml={3} mt={1} {...dec}>
-          {minusIcon ? minusIcon : <MinusIcon fontSize="small" />}
+          {minusIcon || <MinusIcon fontSize="small" />}
         </InputLeftElement>
         <Input textAlign="center" height={12} {...input} />
         <InputRightElement mr={3} mt={1} {...inc}>
